@@ -1,0 +1,32 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class InstagramStaticPage {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Instagram");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 600);
+        
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+        
+        JLabel titleLabel = new JLabel("Instagram", SwingConstants.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        panel.add(titleLabel, BorderLayout.NORTH);
+        
+        JTextArea feedArea = new JTextArea();
+        feedArea.setEditable(false);
+        feedArea.setText("User Posts:\n1. Post 1\n2. Post 2\n3. Post 3");
+        panel.add(feedArea, BorderLayout.CENTER);
+        
+        JButton likeButton = new JButton("Like");
+        JButton commentButton = new JButton("Comment");
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(likeButton);
+        buttonPanel.add(commentButton);
+        panel.add(buttonPanel, BorderLayout.SOUTH);
+        
+        frame.add(panel);
+        frame.setVisible(true);
+    }
+}
